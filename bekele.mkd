@@ -1,0 +1,57 @@
+
+Overview
+========
+
+What's new in our _methods_?
+
+What are the key _results_? 
+
+  How robust are they, and how much do they depend on assumptions?
+
+What _story_ do we want to tell?
+
+Summary
+=======
+
+Base model
+
+* PDE for SIT by age of infection (AoI)
+ * Individual age (IA) is handled implicitly; this is similar to assuming that AoI and IA are independent, which is potentially problematic
+ * We use AoI to predict CD4 and also infectiousness (these are handled separately, which means they're also assumed to be independent)
+ * CD4 counts are used only to decide who is eligible for treatment
+
+* FoI is modulated by mortality and prevalence
+  * Mortality effect ⇒ behaviour
+  * Prevalence effect ⇒ heterogeneity
+  * We have to think about the parameterization and the uncertainty here
+
+Compare with _dropout model_
+
+* 2-d PDE with AoI and time in treatment box.
+ * Lots of difficulties here with keeping track of times for people who bounce around
+ * Currently, we track both times for T₁ only. This means we have to assume that I_d (dropouts) and T₂ behaviour does not depend on time since infection.
+
+* Questions arising:
+ * We want to know people's:
+   1. CD4 count
+	2. Mortality rate
+	3. Transmission rate
+ * How do these depend on τ and τ_1 for the treated individuals? 
+ * What do we assume about dependence on time-in-state for dropout and second-line individuals
+  * There is a continuity problem here that needs to be mentioned
+
+* Structure: the model does not have explicit treatment failure. Are we worried about this?
+ * People who drop out due to failure are treated the same as those who drop out for other reasons (including drop outs due to improved health)
+ * People who transition to T₂ are missing a time lag
+
+Questions
+=========
+
+* Why such a big difference between F4-15d and F6.5d?
+ * Need to look at the _incidence_ not the deaths; there's a big difference in transmission, masked to some extent by the effectiveness of ART
+
+* Where is the data and assumptions from F5.1? How did it get jaggy, and what's the best way to fix it?
+
+* What do we want to do about QALYs DALYs and life-years (YLS)? Can we focus on one? Can we figure out the anomalies in F5.3 (for example)?
+
+* Can we do a better job of parameterizing the dropout function? Does it need a sensitivity analysis?
