@@ -1,14 +1,28 @@
-
 Overview
 ========
 
 What's new in our _methods_?
 
+* The linkage of time since infection and CD4 cell count to determine eligibility of ART initiation. This is as opposed to model works with CD4 categories. 
+* Incorporating dropout and switching from first line to second line treatment. 
+
+* Our work will present an internally consistent body of evidence on key epidemic results. Other studies have separately considered key epidemic indicators such as HIV incidence, prevalence, cost and cost effectiveness.
+
 What are the key _results_? 
 
-  How robust are they, and how much do they depend on assumptions?
-
+* The impact of early HIV treatment (ART scale up) could be minmized due to the high dropout rate (loss to follow up from ART programs)
+* With ‘current’ ART access, it is difficult to achieve HIV elimination within shorter period. HIV elimination defined as HIV incidence less than 0.1%.
+* If we assume that dropout and treatment failure have in significant effect (or ignored) annual costs of ART program decline as programs run longer in contrast to a continual increase estimates if individuals keep switching treatments from first- to second-line.
+How robust are they, and how much do they depend on assumptions?
+  
+* Don't know really as not much is done on a proper sensitivity analysis. However, the scenarios considered (like sensitivity analysis) suggest that projections vary depending on the assumptions (values) of parameters taken. 
+	
+	* Here an important question to ask is how do we parametrize parameters which are dependent on either time since infection or time since ART roll out? 
+	
 What _story_ do we want to tell?
+
+* We see great effort in ART scale up. But need to improve our retention by minimizing the percentage of people who are lost from ART programs. 
+* With ART scale up (early ART roll out) we anticipate the annual cost of programs to decline over time in contrast to what we see here in our second model. The annual spending of ART programs do not show a decline within two decade if people keep to fail first line ART.
 
 Summary
 =======
@@ -33,8 +47,8 @@ Compare with _dropout model_
 
 * Questions arising:
  * We want to know people's:
-   1. CD4 count
-	2. Mortality rate
+    1. CD4 count
+  	2. Mortality rate
 	3. Transmission rate
  * How do these depend on τ and τ_1 for the treated individuals? 
  * What do we assume about dependence on time-in-state for dropout and second-line individuals
@@ -48,10 +62,11 @@ Questions
 =========
 
 * Why such a big difference between F4-15d and F6.5d?
- * Need to look at the _incidence_ not the deaths; there's a big difference in transmission, masked to some extent by the effectiveness of ART
+ 	* Need to look at the _incidence_ not the deaths; there's a big difference in transmission, masked to some extent by the effectiveness of ART
 
 * Where is the data and assumptions from F5.1? How did it get jaggy, and what's the best way to fix it?
 
 * What do we want to do about QALYs DALYs and life-years (YLS)? Can we focus on one? Can we figure out the anomalies in F5.3 (for example)?
-
+	* DALYs are good and often used metrics in cost-effectiveness analysis (when compared with GDP per capita). We should probably choose one of them. Or else study each and present the differences and the interpretations in detail.
 * Can we do a better job of parameterizing the dropout function? Does it need a sensitivity analysis?
+	* We should try to do both, hopefully it will be managable. 
