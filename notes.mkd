@@ -76,3 +76,26 @@ Questions
 	* DALYs are good and often used metrics in cost-effectiveness analysis (when compared with GDP per capita). We should probably choose one of them. Or else study each and present the differences and the interpretations in detail.
 * Can we do a better job of parameterizing the dropout function? Does it need a sensitivity analysis?
 	* We should try to do both, hopefully it will be managable. 
+QALYs and DALYs
+=========
+1 QALY = 1 year of life * 1 utility value.
+
+QALY score = HRQoL * duration of that health state,
+DALY score = YLL + YLD, _YLL - years of life lost due to premature death_ and _YLD - years of lost due to disability_. 
+
+* **YLL = N*L**, N=number of deaths, L=standard life expectancy at age of death in yrs.
+
+* __YLD = I\*DW*L__, I= number of individuals at that health state, DW= disiability weight, L=average duration of the case until death (in years)
+
+Estimating the following is not an easy task, probably not possible:
+
+1 standard life expectancy at age of death (in years) for YLL,
+
+2) average duration of the case until death (in years) for YLD
+
+Disability weights are the opposite of HRQoL. A perfect health has HRQoL equal to 1, and DW=0. When a person dies, DW=1 and HRQoL=0. Does it mean that if we have HRQoL estimate, we can calculate DW? i.e DW = 1-HRQoL. Then we only need to estimate either of these utlilities for each health state (S, I, T; possiblity by time since infection and treatment).
+
+
+![QALY](HRQoL_and_DW.png  "Health related quality of life") Ref: [HRQoL and DW](https://www.researchgate.net/publication/41758117_QALYs_vs_DALYS_vs_LYs_gained_What_are_the_differences_and_what_difference_do_they_make_for_health_care_priority_setting) 
+
+Assumptions for HRQoL and DW are important in the calculation for ICER for the respective ART scenarios. If weights are wrongly assigned to the respective disease burden weights, we might end up with wrong interpretation in the absolute dollars per health out come. In the previous work, we have HRQoL for infected individuals a function of time since infection but we have a fixed value (average) of DW for infected individuals. This needed to be improved. 
