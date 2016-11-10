@@ -17,6 +17,7 @@ include stuff.mk
 overleaf:
 	git clone https://git.overleaf.com/6955852wpgdcrcbnxxc $@
 
+Sources += Assumption_for_dropout_model.tex
 Assumption_for_dropout_model.pdf: Assumption_for_dropout_model.tex
 
 ##################################################################
