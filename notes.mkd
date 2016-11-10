@@ -5,14 +5,16 @@ What's new in our _methods_?
 ----------------------------
 
 * The linkage of time since infection and CD4 cell count to determine eligibility of ART initiation. This is as opposed to model works with CD4 categories. 
-* Incorporating dropout and switching from first line to second line treatment. 
+* Incorporating dropout 
+ * We are not modeling treatment-switching explicitly for this version
 
 * Our work will present an internally consistent body of evidence on key epidemic results. Other studies have separately considered key epidemic indicators such as HIV incidence, prevalence, cost and cost effectiveness.
+ * [[Update (no cost right now) and clarify; instead of comparing, say what we are unifying]]
 
 What are the key _results_?
 ---------------------------
 
-* The impact of early HIV treatment (ART scale up) could be minmized due to the high dropout rate (loss to follow up from ART programs)
+* The impact of early HIV treatment (ART scale up) could be minimized due to the high dropout rate (loss to follow up from ART programs)
 * With ‘current’ ART access, it is difficult to achieve HIV elimination within shorter period. HIV elimination defined as HIV incidence less than 0.1%.
 * If we assume that dropout and treatment failure have in significant effect (or ignored) annual costs of ART program decline as programs run longer in contrast to a continual increase estimates if individuals keep switching treatments from first- to second-line.
 

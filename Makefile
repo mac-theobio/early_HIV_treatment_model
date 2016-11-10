@@ -6,7 +6,6 @@ target pngtarget pdftarget vtarget acrtarget: notarget
 
 ##################################################################
 
-
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
@@ -15,9 +14,15 @@ include stuff.mk
 
 ##################################################################
 
+overleaf:
+	git clone https://git.overleaf.com/6955852wpgdcrcbnxxc $@
+
+##################################################################
+
 ## Content
 
 Sources += $(wildcard *.mkd)
+Notes = lifeYears.mkd notes.mkd
 
 ######################################################################
 
