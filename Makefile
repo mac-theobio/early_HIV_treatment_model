@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: notarget
+target pngtarget pdftarget vtarget acrtarget: Assumption_for_dropout_model.pdf 
 
 ##################################################################
 
@@ -16,6 +16,8 @@ include stuff.mk
 
 overleaf:
 	git clone https://git.overleaf.com/6955852wpgdcrcbnxxc $@
+
+Assumption_for_dropout_model.pdf: Assumption_for_dropout_model.tex
 
 ##################################################################
 
@@ -35,4 +37,4 @@ Notes = lifeYears.mkd notes.mkd
 -include $(ms)/visual.mk
 
 # -include $(ms)/wrapR.mk
-# -include $(ms)/oldlatex.mk
+-include $(ms)/flextex.mk
