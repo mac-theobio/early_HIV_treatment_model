@@ -78,3 +78,16 @@ Questions
 	* DALYs are good and often used metrics in cost-effectiveness analysis (when compared with GDP per capita). We should probably choose one of them. Or else study each and present the differences and the interpretations in detail.
 * Can we do a better job of parameterizing the dropout function? Does it need a sensitivity analysis?
 	* We should try to do both, hopefully it will be managable. 
+
+New method
+==========
+
+* We are defining all of our rates explicitly as rates.
+* For the flow out of the susceptibles we will use an Euler step
+ * Proportion leaving = r Δt
+* For flows out of boxes that have an age profile, we will use hazard-based steps
+ * Proportion leaving = 1 - exp(-r Δt)
+
+The idea is that Euler step is fine for the (slow) flows out of susceptible class, and may even be better, since the hazard flow does not account for people entering the box during the time step.
+
+OTOH, the hazard flow is just perfect for age-in-class boxes, since nothing ever enters them after they are created; also, some of these flows are fast enough to create concerns about the Euler step.

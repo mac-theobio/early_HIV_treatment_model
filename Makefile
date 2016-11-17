@@ -2,7 +2,7 @@
 ### Hooks for the editor to set the default target
 current: target
 
-target pngtarget pdftarget vtarget acrtarget: Assumption_for_dropout_model.pdf 
+target pngtarget pdftarget vtarget acrtarget: ode.out 
 
 ##################################################################
 
@@ -11,6 +11,7 @@ target pngtarget pdftarget vtarget acrtarget: Assumption_for_dropout_model.pdf
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 include stuff.mk
 # include $(ms)/perl.def
+include $(ms)/python.def
 
 ##################################################################
 
@@ -22,10 +23,16 @@ Assumption_for_dropout_model.pdf: Assumption_for_dropout_model.tex
 
 ##################################################################
 
-## Content
-
 Sources += $(wildcard *.mkd)
 Notes = lifeYears.mkd notes.mkd
+
+######################################################################
+
+## ODEs in python?
+## Not doing this for now, because we only like the flow approximation for PDE boxes
+
+ode.out: ode.py
+	$(PITH)
 
 ######################################################################
 
